@@ -10,6 +10,13 @@ Où ? Fichier Docker
 
 Présence d’un utilisateur et mot de passe codés en dur dans les variables d’environnement
 
+
+### Exposure of Sensitive Information to an Unauthorized Actor (CWE-200)
+Où ? Pas encore trouvé (à priori Program.cs ou Controller.cs)
+
+### Commentaire :
+
+Possibilité d'accéder à des ressources du serveur pour lesquelles nous ne sommes pas autorisés, comme par exemple /etc/hosts ou /etc/passwd
 ## Hautes 🔥🔥🔥
 
 ### Deserialization of Untrusted Data (CWE-502) + Code injection (CWE-94)
