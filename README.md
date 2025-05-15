@@ -3,7 +3,6 @@ Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour 
 Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
 L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
 
-
 ---> Reconnaissance <----
 
 Dirb, ffuf
@@ -27,11 +26,10 @@ dirb https://localhost:3000 /usr/share/wordlists/seclists/Discovery/Web-Content/
 ffuf -u https://localhost:3000/?FUZZ=test  -H 'Content-Type: application/json' -w /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt --mc 299,301,302,307,401,403,405,500 -H "Authorization: Bearer (Token Here)"
 ---> paramètre lang trouvé
 
-Un script résumant toute les vulnérabilités éxploitées a également été fait en bash afin de structurer notre opération.
+Un script résumant toutes les actions entreprises a également été fait en bash afin de structurer notre travail.
+Vous pourrez utiliser ce script afin de voir plus clairement comment on s'est organisé pour réaliser cette opération.
 
-## Critique 🔥🔥🔥🔥🔥
-
-### 🔸 1. Exposure of Sensitive Information to an Unauthorized Actor (CWE-200)
+###  1. Exposure of Sensitive Information to an Unauthorized Actor (CWE-200)
 
 ### Commentaire :
 
@@ -45,8 +43,6 @@ Requête pour récupérer le contenu /etc/passwd :
 
 La requête ici fonctionne éxeptionnellement avec des "/" pour ce genre de répertoires, je suppose que c'est parcequ'on peut accéder à /etc/passwd depuis n'importequel path, ce qui fait que ça bypass le fait que ces caractères soient interdits.
 
-
-## Hautes 🔥🔥🔥
 
 ###  2-3. Deserialization of Untrusted Data (CWE-502) + Code injection (CWE-94)
 
@@ -73,7 +69,9 @@ Par manque d'éxperience, cette vulnérabilité n'a pas pu être éxploitée jus
 
 Recommandations : Ne pas utiliser JsonConvert.DeserializeObject sur des données provenant de l’utilisateur sans validation stricte du format ( et du type ) attendu.
 
-### 🔸 4. XML Injection (CWE-91)
+
+###  4. XML Injection (CWE-91)
+
 
 Concernant l'injection XML, on a pu identifier l'url /contract qui retournait des erreurs liées à xml, lorsqu'on tentait de rentrer une valeur aléatoire au paramètre i.
 Après quelques tests, on a donc constaté que l'url acceptait une chaîne XML en paramètre.
@@ -87,9 +85,9 @@ L'injection peut être poussée bien plus loin, en injectant des balises supplé
 
 Recommandations : Désactiver le traitement des DTD, utiliser des parseurs XML sécurisés... ---> XmlReader avec DtdProcessing.Prohibit
 
-## Critique 🔥🔥🔥🔥🔥
 
 ###  5. Utilisation de secrets codés en dur (CWE-798)
+
 
 On a pu trouver cette vulnérabilité à partir de deux autres, injection sql pour trouver un token d'authentification ( qui correspondraient à un user admin dans un cas réel ) , et de la vulnérabilité LFI.
 Une fois qu'on a découvert la vulnérabilité LFI, on n'est pas censé connaître le nom des fichiers, on doit donc utiliser dirb afin d'en trouver un maximum.
@@ -106,9 +104,9 @@ NB : On a également tenté nous même de trouver nous même le secret avec diff
 Recommandations : Ne jamais stocker de secrets en dur dans le code source, ou dans des fichiers accessibles publiquement. 
 Utiliser par exemple des gestionnaires de secrets sécurisés ( HashiCorp Vault, AWS Secrets Manager...)
 
-## Hautes 🔥🔥🔥
 
 ###  6-7. SSRF (CWE-94) + XXE Injection (CWE-611)
+
 
 #### 6. XXE (XML External Entity)
 
@@ -132,9 +130,9 @@ curl -k https://localhost:3000/Contract?i=%3C%3Fxml%20version%3D%221.0%22%20enco
 
 Nous récupérons donc bien par la suite le contenu de etc/passwd, en appellant l'entité file.
 
-## Moyennes 🔥
 
 ###  7. Server-Side Request Forgery (SSRF) (CWE-918) // Indirectement : URL Injection (CWE-601)
+
 
 - **Snyk :** Une requête HTTP est effectuée en fonction d’une URL potentiellement contrôlée par l'utilisateur.  
 - **Explication :** Bien que l’URL soit filtrée pour s'assurer qu’elle commence par `https://localhost`, cette vérification reste fragile face à certaines techniques de contournement.  
@@ -162,6 +160,7 @@ Recommendations : Valider et filtrer les url fournies par l'utilisateur, désact
 
 ###  8-9. Local File Intrusion (CWE-829) // Path Traversal (CWE-22)
 
+
 -Explications : Un utilisateur peut manipuler le paramètre "lang" pour accéder à des fichiers système ou sensibles.
 
 à partir du paramètre trouvé (?lang=test) grâce à l'étape de la reconnaissance ( dirb ), on trouve que ?lang=test donne un code 200, ce qui nous amène par la suite à tenter de trouver une vulnérabilité (LFI), et un path traversal par la suite; on le voit dès la première érreur mentionnée en lançant notre requête: "Could not find file".
@@ -180,7 +179,9 @@ La requête fonctionne avec lang=/etc/passwd, mais si on a des soucis par la sui
 
 Recommandation : Utiliser une liste blanche de fichiers autorisés plutôt qu'une blacklist, bloquer toute les types de séquences, ne pas inclure directement des chemins ou noms de fichiers fournis par l'utilisateur sans validation, et configurer les permissions pour qu'en cas de faille, les fichiers ne soient pas lisibles par l'application.
 
+
 ###  10. Insecure Direct Object Reference (IDOR) (CWE-639)
+
 
 Explications : Le paramètre "Id" est utilisé directement pour retrouver un utilisateur sans vérification d’autorisation. ça permet donc à un utilisateur malveillant d'accéder à des données d'autres employés en changeant l'ID dans la requête.  
 
@@ -196,7 +197,9 @@ On découvre ensuite des données confidentielles d'une quinzaine d'employés.
 
 Recommandations : Implémenter une logique d’autorisation stricte basée sur l’utilisateur connecté, et vérifier que l’ID demandé lui appartient.
 
+
 ###  11. Command Injection (CWE-77)
+
 
 - Explications: Le paramètre `UserStr` est utilisé pour construire une commande shell sans échappement. Un attaquant pourrait donc injecter une commande arbitraire après l'appel "nslookup", conduisant à l'éxécution de commandes systèmes non prévues.
 - 
@@ -210,7 +213,9 @@ Après avoir tenté un dirb pour trouver un paramètre valide, on comprend que l
 
 Recommandation : Ne jamais insérer de chaînes utilisateur dans une commande shell ( never trust user ). Utiliser des API sécurisées pour DNS, ou échapper correctement les arguments.
 
+
 ###  12. GraphQL (CWE-200)
+
 
 - Explications: L’interface GraphQL est exposée publiquement. ça permet donc à un attaquant d'éxplorer toute l'API GraphQL.
 
