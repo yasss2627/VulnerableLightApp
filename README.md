@@ -5,7 +5,7 @@ Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour 
 Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
 L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
 
- ###                                    ---> Reconnaissance <----
+ <h1 style="text-align: center;">---> Reconnaissance <----</h1>
 
 Dirb, ffuf
 
