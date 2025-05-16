@@ -5,11 +5,11 @@ Pour repérer les vulnérabilités dans l'application, on a utilisé Snyk, pour 
 Mais d'un point de vue plus réaliste, on a décidé de privilégier l'éxploitation des vulnérabilités via des requêtes curl, pour tenter de simuler un scénario black box, où on ne dispose d'aucune informations.
 L'étape de la reconnaissance ( faite grâce à plusieurs outils, tels que dirb, ffuf, scripts pythons... ) était donc primordiale pour tenter de trouver des vulnérabilités, et les éxploiter par la suite.
 
----> Reconnaissance <----
+##### ---> Reconnaissance <----
 
 Dirb, ffuf
 
-irb https://localhost:3000 /usr/share/wordlists/seclists/Fuzzing/fuzz-Bo0oM.txt -w -H "Authorization: Bearer (Token Here)"
+dirb https://localhost:3000 /usr/share/wordlists/seclists/Fuzzing/fuzz-Bo0oM.txt -w -H "Authorization: Bearer (Token Here)"
 
 ---> /login
 
@@ -285,7 +285,7 @@ En éxploitant la page client, on trouve GraphQL, et avec des requêtes curl, on
 On peut donc éxécuter une query par curl pour récupérer tous les champs disponibles : 
 
 ---> curl -k -X POST https://localhost:3000/client \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6InVzZXIiLCJJc0FkbWluIjoiRmFsc2UiLCJuYmYiOjE3MjUyNjY1MDksImV4cCI6MTc1NjgwMjUwOSwiaWF0IjoxNzI1MjY2NTA5fQ.D_RUjJiR4eptm1DJqpPEOYMEbP6fFWgRX7ylZIFHtSE" \
+  -H "Authorization: Bearer token here" \
   -H "Content-Type: application/json" \
   -H "GraphQL-Require-Preflight: 1" \
   -d '{"query":"{ __schema { types { name fields { name } } } }"}'
